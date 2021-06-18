@@ -1,31 +1,27 @@
-// TODO: Include packages needed for this application
-
-//   function renderLicenseBadge(license) {
-//     [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-//     [![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
-//     [![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
-
-//   }
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { error } = require("console");
 const badgedisplay = renderLicenseBadge();
 
-const generateMarkdown = (input) =>
-  `# ${input.title}
 
-  # Description
-  ${input.discription}
 
-  # License
-  ${renderLicenseBadge(input.licenseBadge)}
+function generateMarkdown(input){
+  return `${input.title}
   
-  # github
+  ## Description
+  ${input.description}
+
+
+  ## License
+  ${renderLicenseBadge(input)}
+  
+  ## github
   ${input.github}
 
-  # Email
+  ## Email
   ${input.email}
-   `;
+   `
+}
 
 function renderLicenseBadge(input) {
   let licenseType;
