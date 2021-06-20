@@ -1,28 +1,33 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-  [![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
-  [![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+
+function generateMarkdown(input){
+  return `${input.title}
+  
+  ## Description
+  ${input.description}
 
 
+  ## License
+  ${renderLicenseBadge(input)}
+  
+  ## github
+  ${input.github}
 
-
+  ## Email
+  ${input.email}
+   `
 }
+function renderLicenseBadge(input) {
+  let licenseType;
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-`;
+  if (input === "Apache") {
+    licenseType = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+  } else if (input === "Boost") {
+    licenseType = `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
+  } else if (input === "BSD-3") {
+    licenseType = ` [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
+  } else {
+    licenseType = "N/A";
+  }
+  return licenseType;
 }
-
 module.exports = generateMarkdown;
