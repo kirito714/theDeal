@@ -10,12 +10,27 @@ inquirer
     {
       type: "input",
       name: "title",
-      message: "what is your porject title?",
+      message: "what is your project title?",
     },
     {
       type: "input",
-      name: "discription",
-      message: "what is the description,installation,instructions,usage, ect?",
+      name: "description",
+      message: "what is the description?",
+    },
+    {
+      type: "input",
+      name: "installation",
+      message: "what is the installation?",
+    },
+    {
+      type: "input",
+      name: "instructions",
+      message: "what is the instructions?",
+    },
+    {
+      type: "input",
+      name: "usage",
+      message: "what is the usage",
     },
     {
       type: "list",

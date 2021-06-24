@@ -1,19 +1,42 @@
 
 function generateMarkdown(input){
-  return `${input.title}
+  return `# ${input.title}
   
-  ## Description
-  ${input.description}
+  ## Table of Contents 
+
+* [Description](#Description)
+
+* [installation](#installation)
+
+* [instructions](#instructions)
+
+* [Usage](#usage)
 
 
   ## License
-  ${renderLicenseBadge(input)}
+  ${renderLicenseBadge(input.licenseBadge)}
+  
+  
+  
+  
+  
+  
+  
+  # Description
+  ${input.description}
+  # installation
+  ${input.installation}
+  # instructions
+  ${input.instructions}
+  # usage
+  ${input.usage}
+
   
   ## github
-  ${input.github}
+       [${input.github}](https://github.com/${input.github}?tab=repositories)
 
   ## Email
-  ${input.email}
+       [${input.email}](https://www.google.com/)
    `
 }
 function renderLicenseBadge(input) {
